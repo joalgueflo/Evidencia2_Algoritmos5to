@@ -3,6 +3,7 @@
 #include <fstream>
 #include <vector>
 #include <sstream>
+#include <climits>
 using namespace std;
 
 
@@ -39,6 +40,50 @@ void problemaResuelto1(ifstream& file){
         char dest = 'A' + e.dest;
         cout << "(" << src << ", " << dest << ")" << endl;
     }
+}
+
+// Implementación de problemaResuelto2
+void problemaResuelto2(ifstream& file) {
+    int n;
+    file >> n;
+    vector<vector<int>> graph(n, vector<int>(n));
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            file >> graph[i][j];
+        }
+    }
+    vector<vector<int>> dp(1 << n, vector<int>(n, -1));
+    int cost = tsp(graph, dp, 1, 0, n);
+    cout << "2.\nRuta más corta: " << cost << endl;
+}
+
+// Implementación de problemaResuelto3
+void problemaResuelto3(ifstream& file) {
+    int n;
+    file >> n;
+    vector<vector<int>> capacity(n, vector<int>(n));
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            file >> capacity[i][j];
+        }
+    }
+    vector<vector<int>> rGraph = capacity;
+    vector<int> parent(n);
+    int max_flow = 0;
+    while (bfs(rGraph, 0, n - 1, parent)) {
+        int path_flow = INT_MAX;
+        for (int v = n - 1; v != 0; v = parent[v]) {
+            int u = parent[v];
+            path_flow = min(path_flow, rGraph[u][v]);
+        }
+        for (int v = n - 1; v != 0; v = parent[v]) {
+            int u = parent[v];
+            rGraph[u][v] -= path_flow;
+            rGraph[v][u] += path_flow;
+        }
+        max_flow += path_flow;
+    }
+    cout << "3.\nFlujo máximo: " << max_flow << endl;
 }
 
 
