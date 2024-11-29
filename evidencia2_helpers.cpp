@@ -2,6 +2,7 @@
 #include <cmath>
 #include <algorithm>
 #include <vector>
+#include <climits>
 
 DisjointSet::DisjointSet(int n) {
     parent.resize(n);
