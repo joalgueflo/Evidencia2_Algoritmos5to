@@ -1,6 +1,7 @@
 #include "evidencia2.h"
 #include <cmath>
 #include <algorithm>
+#include <vector>
 
 DisjointSet::DisjointSet(int n) {
     parent.resize(n);
@@ -67,7 +68,7 @@ Point findNearestCentral(const std::vector<Point>& centrals, const Point& newPoi
 }
 
 // Función auxiliar para el TSP
-int tsp(std::vector<vector<int>>& graph, std::vector<vector<int>>& dp, int visited, int pos, int n) {
+int tsp(std::vector<std::vector<int>>& graph, std::vector<std::vector<int>>& dp, int visited, int pos, int n) {
     if (visited == (1 << n) - 1) {
         return graph[pos][0];
     }
@@ -84,7 +85,7 @@ int tsp(std::vector<vector<int>>& graph, std::vector<vector<int>>& dp, int visit
     return dp[visited][pos] = result;
 }
 
-bool bfs(std::vector<vector<int>>& rGraph, int s, int t, std::vector<int>& parent) {
+bool bfs(std::vector<std::vector<int>>& rGraph, int s, int t, std::vector<int>& parent) {
     int V = rGraph.size();
 	std::vector<bool> visited(V, false);
 	std::vector<int> queue;
