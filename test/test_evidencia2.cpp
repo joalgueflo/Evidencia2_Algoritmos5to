@@ -6,7 +6,7 @@ TEST(KruskalMST, BasicTest) {
     std::vector<Edge> edges = { Edge(0, 1, 10), Edge(0, 2, 6), Edge(0, 3, 5), Edge(1, 3, 15), Edge(2, 3, 4) };
     int V = 4;
 
-    std::vector<Edge> mst = kruskalMST(edges, V);
+    std::vector<Edge> mst = kruskal_MST(edges, V);
 
     ASSERT_EQ(mst.size(), V - 1);
     EXPECT_EQ(mst[0].weight, 4);
