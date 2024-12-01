@@ -6,7 +6,7 @@
 #include <string>
 
 /**
- * Esta estructura representa una edge con un peso
+  Esta estructura representa una edge con un peso
  */
 struct Edge {
     Edge(int s, int d, int w) : src(s), dest(d), weight(w) {}
