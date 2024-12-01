@@ -28,7 +28,7 @@ void DisjointSet::unite(int x, int y) {
     }
 }
 
-std::vector<Edge> kruskalMST(std::vector<Edge>& edges, int V) {
+std::vector<Edge> kruskal_MST(std::vector<Edge>& edges, int V) {
 	//Sorteamos las edges por peso
     std::sort(edges.begin(), edges.end(),
               [](Edge& a, Edge& b) { return a.weight < b.weight; });
