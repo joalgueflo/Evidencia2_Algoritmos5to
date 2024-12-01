@@ -5,7 +5,8 @@
 #include <vector>
 #include <string>
 
-/*Esta estructura representa una edge con un peso
+/**
+ * Esta estructura representa una edge con un peso
  */
 struct Edge {
     int src, dest, weight;
