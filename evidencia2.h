@@ -1,3 +1,7 @@
+/* evidencia2.h
+ * Alonso Huerta, Jose Guerrero, Hector Arroyo
+ */
+
 #ifndef EVIDENCIA2_H
 #define EVIDENCIA2_H
 
@@ -30,3 +34,4 @@ double distance(const Point& p1, const Point& p2);
 Point findNearestCentral(const std::vector<Point>& centrals, const Point& newPoint);
 
 #endif
+

@@ -1,13 +1,15 @@
+/* evidencia2.cpp
+ * Alonso Huerta, Jose Guerrero, Hector Arroyo
+ */
+
 #include "evidencia2.h"
 #include "evidencia2_helpers.cpp"
 #include <iostream>
-#include <fstream>
 #include <vector>
-#include <sstream>
 #include <climits>
 using namespace std;
 
-void problemaResuelto1(int N, vector<vector<int>>& matrix) {
+void problema_resuelto_1(int N, vector<vector<int>>& matrix) {
     vector<Edge> edges;
     for(int i = 0; i < N; i++) {
         for(int j = i + 1; j < N; j++) {
@@ -27,13 +29,13 @@ void problemaResuelto1(int N, vector<vector<int>>& matrix) {
     }
 }
 
-void problemaResuelto2(int N, vector<vector<int>>& matrix) {
+void problema_resuelto_2(int N, vector<vector<int>>& matrix) {
     vector<vector<int>> dp(1 << N, vector<int>(N, -1));
     int cost = tsp(matrix, dp, 1, 0, N);
     cout << "2.\nRuta más corta: " << cost << endl;
 }
 
-void problemaResuelto3(int N, vector<vector<int>>& capacity) {
+void problema_resuelto_3(int N, vector<vector<int>>& capacity) {
     vector<vector<int>> rGraph = capacity;
     vector<int> parent(N);
     int max_flow = 0;
@@ -54,7 +56,7 @@ void problemaResuelto3(int N, vector<vector<int>>& capacity) {
     cout << "3.\nFlujo máximo: " << max_flow << endl;
 }
 
-void problemaResuelto4(int N, vector<Point>& centrals, Point newPoint) {
+void problema_resuelto_4(int N, vector<Point>& centrals, Point newPoint) {
     Point nearest = findNearestCentral(centrals, newPoint);
     cout << "4.\n";
     cout << "(" << nearest.x << ", " << nearest.y << ")" << endl;
@@ -103,10 +105,11 @@ int main() {
     Point newPoint(x, y);
     
     // Llamada a las funciones
-    problemaResuelto1(N, distanceMatrix);
-    problemaResuelto2(N, distanceMatrix);
-    problemaResuelto3(N, capacityMatrix);
-    problemaResuelto4(N, centrals, newPoint);
+    problema_resuelto_1(N, distanceMatrix);
+    problema_resuelto_2(N, distanceMatrix);
+    problema_resuelto_3(N, capacityMatrix);
+    problema_resuelto_4(N, centrals, newPoint);
     
     return 0;
 }
+
