@@ -1,6 +1,3 @@
-/* evidencia2.h
- * Alonso Huerta, Jose Guerrero, Hector Arroyo
- */
 
 #ifndef EVIDENCIA2_H
 #define EVIDENCIA2_H
@@ -8,7 +5,8 @@
 #include <vector>
 #include <string>
 
-//Esta estructura representa una edge con un peso
+/*Esta estructura representa una edge con un peso
+ */
 struct Edge {
     int src, dest, weight;
     Edge(int s, int d, int w) : src(s), dest(d), weight(w) {}
