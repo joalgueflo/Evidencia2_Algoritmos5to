@@ -1,15 +1,3 @@
-/*
- * Evidencia2 - Implementation of Evidencia 2
- * Copyright (C) 2024 Alonso Huerta, Jose Guerrero, Hector Arroyo
- *
- * This software is licensed under the MIT License. You may obtain a copy
- * of the license at https://opensource.org/licenses/MIT
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
- * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
- * See the MIT License for more details.
- */
 
 #include "evidencia2.h"
 #include "evidencia2_helpers.cpp"
