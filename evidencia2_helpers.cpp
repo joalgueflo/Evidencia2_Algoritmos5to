@@ -55,7 +55,7 @@ double distance(const Point& p1, const Point& p2) {
 }
 
 // Función para encontrar la central más cercana
-Point findNearestCentral(const std::vector<Point>& centrals, const Point& newPoint) {
+Point find_nearest_central(const std::vector<Point>& centrals, const Point& newPoint) {
     Point nearest = centrals[0];
     double minDist = distance(centrals[0], newPoint);
 

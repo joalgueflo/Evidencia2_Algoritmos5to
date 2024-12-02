@@ -24,7 +24,7 @@ TEST(FindNearestCentral, SimpleTest) {
     std::vector<Point> centrals = { Point(0, 0), Point(10, 10), Point(5, 5) };
     Point newPoint(2, 2);
 
-    Point nearest = findNearestCentral(centrals, newPoint);
+    Point nearest = find_nearest_central(centrals, newPoint);
     EXPECT_EQ(nearest.x, 0);
     EXPECT_EQ(nearest.y, 0);
 }

@@ -54,7 +54,7 @@ void problema_resuelto_3(int N, vector<vector<int>>& capacity) {
 }
 
 void problema_resuelto_4(int N, vector<Point>& centrals, Point newPoint) {
-    Point nearest = findNearestCentral(centrals, newPoint);
+    Point nearest = find_nearest_central(centrals, newPoint);
     cout << "4.\n";
     cout << "(" << nearest.x << ", " << nearest.y << ")" << endl;
 }
