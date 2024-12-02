@@ -28,8 +28,25 @@ void problema_resuelto_1(int N, vector<vector<int>>& matrix) {
 
 void problema_resuelto_2(int N, vector<vector<int>>& matrix) {
     vector<vector<int>> dp(1 << N, vector<int>(N, -1));
-    int cost = tsp(matrix, dp, 1, 0, N);
-    cout << "2.\nRuta más corta: " << cost << endl;
+	vector<vector<int>> parent(1 << N, vector<int>(N, -1));
+    int cost = tsp(matrix, dp, 1, 0, N, parent);
+
+	vector<int> tour;
+	int visited = 1, pos = 0;
+	while (true) {
+		tour.push_back(pos);
+		int next = parent[visited][pos];
+		if (next == -1) break;
+		visited |= (1 << next);	
+		pos = next;
+	}
+	tour.push_back(0);
+
+    cout << "2.\n" << cost << endl;
+	for (size_t i = 0; i < tour.size(); i++) {
+		cout << (char)('A' + tour[i]) << " ";
+	}
+	cout << "\n";
 }
 
 void problema_resuelto_3(int N, vector<vector<int>>& capacity) {

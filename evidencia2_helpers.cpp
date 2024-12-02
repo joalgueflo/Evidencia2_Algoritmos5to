@@ -70,7 +70,7 @@ Point find_nearest_central(const std::vector<Point>& centrals, const Point& newP
 }
 
 // Función auxiliar para el TSP
-int tsp(std::vector<std::vector<int>>& graph, std::vector<std::vector<int>>& dp, int visited, int pos, int n) {
+int tsp(std::vector<std::vector<int>>& graph, std::vector<std::vector<int>>& dp, int visited, int pos, int n, std::vector<std::vector<int>>& parent) {
     if (visited == (1 << n) - 1) {
         return graph[pos][0];
     }
@@ -80,8 +80,11 @@ int tsp(std::vector<std::vector<int>>& graph, std::vector<std::vector<int>>& dp,
     int result = INT_MAX;
     for (int city = 0; city < n; city++) {
         if ((visited & (1 << city)) == 0) {
-            int newCost = graph[pos][city] + tsp(graph, dp, visited | (1 << city), city, n);
-            result = std::min(result, newCost);
+            int newCost = graph[pos][city] + tsp(graph, dp, visited | (1 << city), city, n, parent);
+			if (newCost < result) {
+				result = newCost;
+				parent[visited][pos] = city;
+			}
         }
     }
     return dp[visited][pos] = result;
