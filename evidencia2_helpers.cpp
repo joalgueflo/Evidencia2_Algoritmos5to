@@ -30,7 +30,7 @@ void DisjointSet::Unite(int x, int y) {
 }
 
 std::vector<Edge> kruskal_mst(std::vector<Edge>& edges, int V) {
-	//Sorteamos las edges por peso
+    //Sorteamos las edges por peso
     std::sort(edges.begin(), edges.end(),
               [](Edge& a, Edge& b) { return a.weight < b.weight; });
 
@@ -89,8 +89,8 @@ int tsp(std::vector<std::vector<int>>& graph, std::vector<std::vector<int>>& dp,
 
 bool bfs(std::vector<std::vector<int>>& rGraph, int s, int t, std::vector<int>& parent) {
     int V = rGraph.size();
-	std::vector<bool> visited(V, false);
-	std::vector<int> queue;
+    std::vector<bool> visited(V, false);
+    std::vector<int> queue;
     queue.push_back(s);
     visited[s] = true;
     parent[s] = -1;
