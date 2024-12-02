@@ -9,26 +9,26 @@
   Esta estructura representa una edge con un peso
  */
 struct Edge {
-	/**
-	 * Constructor
-	 */
+    /**
+     * Constructor
+     */
     Edge(int s, int d, int w) : src(s), dest(d), weight(w) {}
 
     int src; ///< Fuente de la Edge
-	int dest; ///< Destino de la Edge
-	int weight; ///< Peso de la Edge
+    int dest; ///< Destino de la Edge
+    int weight; ///< Peso de la Edge
 };
 
 /** 
  * Estructura para un punto
  */
 struct Point {
-	/**
-	 * Constructor
-	 */
+    /**
+     * Constructor
+     */
     Point(int _x = 0, int _y = 0) : x(_x), y(_y) {}
     int x; ///< Coordenada x
-	int y; ///< Coordenada y
+    int y; ///< Coordenada y
 };
 
 /**
@@ -36,21 +36,21 @@ struct Point {
  */
 class DisjointSet {
     std::vector<int> parent; ///< Vector de padres
-	std::vector<int> rank; ///< Vector de rangos
+    std::vector<int> rank; ///< Vector de rangos
 public:
-	/**
-	 * Constructor
-	 */
+    /**
+     * Constructor
+     */
     DisjointSet(int n);
 
-	/**
-	 *  Encuentra el padre de un elemento
-	 */
+    /**
+     *  Encuentra el padre de un elemento
+     */
     int Find(int x);
 
-	/**
-	 * Une dos elementos
-	 */
+    /**
+     * Une dos elementos
+     */
     void Unite(int x, int y);
 };
 
