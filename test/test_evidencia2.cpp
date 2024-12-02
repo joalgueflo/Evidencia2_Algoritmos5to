@@ -1,8 +1,9 @@
 
 #include "test_wrapper.h"
+#include <gtest/gtest.h>
 #include "../evidencia2.h"
 
-test(KruskalMST, BasicTest) {
+TEST(KruskalMST, BasicTest) {
     std::vector<Edge> edges = { Edge(0, 1, 10), Edge(0, 2, 6), Edge(0, 3, 5), Edge(1, 3, 15), Edge(2, 3, 4) };
     int V = 4;
 
@@ -13,12 +14,12 @@ test(KruskalMST, BasicTest) {
     EXPECT_EQ(mst[1].weight, 5);
 }
 
-test(DistanceFunction, PythagoreanTriple) {
+TEST(DistanceFunction, PythagoreanTriple) {
     Point p1(0, 0), p2(3, 4);
     EXPECT_DOUBLE_EQ(distance(p1, p2), 5.0);
 }
 
-test(FindNearestCentral, SimpleTest) {
+TEST(FindNearestCentral, SimpleTest) {
     std::vector<Point> centrals = { Point(0, 0), Point(10, 10), Point(5, 5) };
     Point newPoint(2, 2);
 
