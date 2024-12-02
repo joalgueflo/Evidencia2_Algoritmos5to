@@ -1,3 +1,4 @@
+
 #include "evidencia2.h"
 #include <cmath>
 #include <algorithm>
@@ -10,14 +11,14 @@ DisjointSet::DisjointSet(int n) {
     for (int i = 0; i < n; i++) parent[i] = i;
 }
 
-int DisjointSet::find(int x) {
+int DisjointSet::Find(int x) {
     if (parent[x] != x)
-        parent[x] = find(parent[x]);
+        parent[x] = Find(parent[x]);
     return parent[x];
 }
 
-void DisjointSet::unite(int x, int y) {
-    int px = find(x), py = find(y);
+void DisjointSet::Unite(int x, int y) {
+    int px = Find(x), py = Find(y);
     if (rank[px] < rank[py])
         parent[px] = py;
     else if (rank[px] > rank[py])
@@ -28,7 +29,7 @@ void DisjointSet::unite(int x, int y) {
     }
 }
 
-std::vector<Edge> kruskal_MST(std::vector<Edge>& edges, int V) {
+std::vector<Edge> kruskal_mst(std::vector<Edge>& edges, int V) {
 	//Sorteamos las edges por peso
     std::sort(edges.begin(), edges.end(),
               [](Edge& a, Edge& b) { return a.weight < b.weight; });
@@ -37,12 +38,12 @@ std::vector<Edge> kruskal_MST(std::vector<Edge>& edges, int V) {
     DisjointSet ds(V);
 
     for (Edge& e : edges) {
-        int set1 = ds.find(e.src);
-        int set2 = ds.find(e.dest);
+        int set1 = ds.Find(e.src);
+        int set2 = ds.Find(e.dest);
 
         if (set1 != set2) {
             result.push_back(e);
-            ds.unite(set1, set2);
+            ds.Unite(set1, set2);
         }
     }
     return result;

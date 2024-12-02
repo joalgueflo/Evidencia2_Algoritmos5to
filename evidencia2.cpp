@@ -16,7 +16,7 @@ void problema_resuelto_1(int N, vector<vector<int>>& matrix) {
         }
     }
     
-    vector<Edge> mst = kruskal_MST(edges, N);
+    vector<Edge> mst = kruskal_mst(edges, N);
     
     cout << "1." << endl;
     for(Edge& e : mst) {

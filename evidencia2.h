@@ -46,18 +46,18 @@ public:
 	/**
 	 *  Encuentra el padre de un elemento
 	 */
-    int find(int x);
+    int Find(int x);
 
 	/**
 	 * Une dos elementos
 	 */
-    void unite(int x, int y);
+    void Unite(int x, int y);
 };
 
 /**
  * Algoritmo de kruskal
  */
-std::vector<Edge> kruskal_MST(std::vector<Edge>& edges, int V);
+std::vector<Edge> kruskal_mst(std::vector<Edge>& edges, int V);
 
 /**
  * Calcular distancia entre dos puntos
