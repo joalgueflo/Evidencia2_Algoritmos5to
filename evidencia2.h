@@ -9,6 +9,9 @@
   Esta estructura representa una edge con un peso
  */
 struct Edge {
+	/**
+	 * Constructor
+	 */
     Edge(int s, int d, int w) : src(s), dest(d), weight(w) {}
 
     int src; ///< Fuente de la Edge
@@ -20,6 +23,9 @@ struct Edge {
  * Estructura para un punto
  */
 struct Point {
+	/**
+	 * Constructor
+	 */
     Point(int _x = 0, int _y = 0) : x(_x), y(_y) {}
     int x; ///< Coordenada x
 	int y; ///< Coordenada y
@@ -32,6 +38,9 @@ class DisjointSet {
     std::vector<int> parent; ///< Vector de padres
 	std::vector<int> rank; ///< Vector de rangos
 public:
+	/**
+	 * Constructor
+	 */
     DisjointSet(int n);
 
 	/**
